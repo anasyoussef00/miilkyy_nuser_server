@@ -65,4 +65,9 @@ class Authentication extends Controller
             'nuser_obj' => $nuser
         ]);
     }
+
+    public function logout(Request $req)
+    {
+        return $req->user()->currentAccessToken()->delete();
+    }
 }
